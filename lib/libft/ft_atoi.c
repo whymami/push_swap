@@ -1,24 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: muguveli <muguveli@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/22 16:57:16 by muguveli          #+#    #+#             */
-/*   Updated: 2023/12/23 15:42:56 by muguveli         ###   ########.fr       */
+/*   Created: 2023/12/05 19:30:40 by muguveli          #+#    #+#             */
+/*   Updated: 2024/04/15 19:45:58 by muguveli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	ft_lstiter(t_list *lst, void (*f)(void *))
+long	ft_atoi(const char *str)
 {
-	if (!lst)
-		return ;
-	while (lst)
+	int		i;
+	int		sign;
+	long	tmp;
+
+	i = 0;
+	sign = 1;
+	tmp = 0;
+	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
+		i++;
+	if ((str[i] == 43 || str[i] == 45))
 	{
-		f(lst->content);
-		lst = lst->next;
+		if (str[i] == 45)
+		{
+			sign *= -1;
+		}
+		i++;
 	}
+	while (str[i] >= 48 && str[i] <= 57)
+	{
+		tmp = (tmp * 10) + (str[i] - 48);
+		i++;
+	}
+	return (tmp * sign);
 }
