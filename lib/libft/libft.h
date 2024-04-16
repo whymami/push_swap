@@ -6,7 +6,7 @@
 /*   By: muguveli <muguveli@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 12:51:48 by muguveli          #+#    #+#             */
-/*   Updated: 2024/04/15 19:47:12 by muguveli         ###   ########.fr       */
+/*   Updated: 2024/04/16 12:31:01 by muguveli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int					ft_lstsize(t_list *lst);
 t_list				*ft_lstlast(t_list *lst);
 void				ft_lstadd_back(t_list **lst, t_list *new);
 void				ft_lstdelone(t_list *lst, void (*del)(int));
-void				ft_lstclear(t_list **lst, void (*del)(void *));
+void				ft_lstclear(t_list **lst);
 long				ft_atoi(const char *str);
 
 #endif

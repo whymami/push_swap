@@ -4,7 +4,7 @@ PRINTF_PATH = lib/ft_printf
 LIBFT = $(LIBFT_PATH)/libft.a
 PRINTF = $(PRINTF_PATH)/libftprintf.a
 
-SRC = main.c
+SRC = main.c utils.c
 OBJ = $(SRC:.c=.o)
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
