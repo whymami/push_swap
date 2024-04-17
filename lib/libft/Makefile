@@ -8,6 +8,9 @@ SRC = \
 	ft_lstnew.c \
 	ft_lstsize.c \
 	ft_atoi.c \
+	ft_isdigit.c \
+	ft_strlen.c \
+	ft_swap.c
 
 OBJ = $(SRC:.c=.o)
 CC = gcc
