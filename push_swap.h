@@ -6,7 +6,7 @@
 /*   By: muguveli <muguveli@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 15:00:26 by muguveli          #+#    #+#             */
-/*   Updated: 2024/04/17 20:29:50 by muguveli         ###   ########.fr       */
+/*   Updated: 2024/04/18 18:04:16 by muguveli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,6 @@ void ft_add_stack(char **argv, t_list **a);
 void ft_isunique(t_list *a);
 int ft_issort(t_list *a);
 
-void quick_sort(t_list **a, t_list **b, int size);
+void quick_sort(t_list **a);
 
 #endif

@@ -20,10 +20,5 @@ int	main(int argc, char **argv)
 	if (ft_lstsize(a) > 1 && ft_lstsize(a) <= 5)
 		ft_sort(&a, &b, ft_lstsize(a));
 	else if(ft_lstsize(a) > 5 && ft_lstsize(a) <= 100)
-		quick_sort(&a, &b, ft_lstsize(a));
-	while(a)
-	{
-		ft_printf("%d ", a->content);
-		a = a->next;
-	}
+		quick_sort(&a);
 }
