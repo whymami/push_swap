@@ -19,6 +19,6 @@ int	main(int argc, char **argv)
 	ft_init(argv, &a);
 	if (ft_lstsize(a) > 1 && ft_lstsize(a) <= 5)
 		ft_sort(&a, &b, ft_lstsize(a));
-	else if(ft_lstsize(a) > 5 && ft_lstsize(a) <= 100)
-		quick_sort(&a);
+	else if(ft_lstsize(a) > 5)
+		bubble_sort(&a, &b);
 }
