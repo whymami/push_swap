@@ -6,7 +6,7 @@
 /*   By: muguveli <muguveli@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 12:51:48 by muguveli          #+#    #+#             */
-/*   Updated: 2024/04/19 15:32:22 by muguveli         ###   ########.fr       */
+/*   Updated: 2024/04/22 14:50:42 by muguveli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 
 typedef struct s_list
 {
+	int			inx;
 	int			content;
 	struct s_list	*next;
 }					t_list;

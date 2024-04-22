@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   quick_sort.c                                       :+:      :+:    :+:   */
+/*   bubble_sort.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: muguveli <muguveli@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 14:14:52 by muguveli          #+#    #+#             */
-/*   Updated: 2024/04/19 17:46:01 by muguveli         ###   ########.fr       */
+/*   Updated: 2024/04/22 16:33:39 by muguveli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void print_list(t_list *a)
 	t_list *tmp = a;
 	while (tmp)
 	{
-		ft_printf("%d\n", tmp->content);
+		ft_printf("%d\t %d\n", tmp->content, tmp->inx);
 		tmp = tmp->next;
 	}
 }
@@ -54,31 +54,37 @@ static t_list *arr_add_to_list(int *arr, int size)
 			tmp->next = ft_lstnew(arr[i]);
 			tmp = tmp->next;
 		}
+		tmp->inx = i;
 		i++;
 	}
 	return (head);
 }
 
-static t_list *bubble_sort_array(int *arr, int size)
+t_sorted_array bubble_sort_array(int *arr, int size)
 {
-	int i = 0;
-	int j = 0;
+    int i = 0;
+    int j = 0;
 
-	while (i < size)
-	{
-		j = 0;
-		while (j < size - 1)
-		{
-			if (arr[j] > arr[j + 1])
-				ft_swap(&arr[j], &arr[j + 1]);
-			j++;
-		}
-		i++;
-	}
+    while (i < size)
+    {
+        j = 0;
+        while (j < size - 1)
+        {
+            if (arr[j] > arr[j + 1])
+                ft_swap(&arr[j], &arr[j + 1]);
+            j++;
+        }
+        i++;
+    }
+    t_list *sorted_list = arr_add_to_list(arr, size);
+    // print_list(sorted_list);
 
-	t_list *tmp = arr_add_to_list(arr, size);
-	return (tmp);
+    t_sorted_array result;
+    result.sorted_list = sorted_list;
+
+    return result;
 }
+
 #include "unistd.h"
 
 
@@ -103,22 +109,86 @@ void ft_pop(t_list **a)
 	free(tmp);
 }
 
+void update_inx(t_list **a)
+{
+	int i = 0;
+	while (a)
+	{
+		(*a)->inx = i;
+		*a = (*a)->next;
+		i++;
+	}
+}
+
+int find_middle(t_list *a)
+{
+	int size = ft_lstsize(a);
+	int i;
+
+	if (size % 2 == 0)
+		size = size / 2;
+	else
+		size = (size / 2) + 1;
+	i = -1;
+	while (++i < size)
+		a = a->next;
+	return (a->inx);
+}
+t_list *search_min(t_list *a)
+{
+	t_list *tmp = a;
+	t_list *min = a;
+	while (tmp)
+	{
+		if (tmp->content < min->content)
+			min = tmp;
+		tmp = tmp->next;
+	}
+	return (min);
+}
+
+int ischeap(t_list *a)
+{
+	t_list *min = search_min(a);
+	int middle = find_middle(a);
+	if (min->inx < middle)
+		return 1;
+	return 0;
+}
+
 void bubble_sort(t_list **a, t_list **b)
 {
 	int size = ft_lstsize(*a);
 	int *arr = list_to_array(*a);
-	t_list *sorted_list = bubble_sort_array(arr, size);
-	while(sorted_list)
+	t_sorted_array tmp;
+	tmp = bubble_sort_array(arr, size);
+	int cheaps = 0;
+	while(ft_lstsize(*a) > 3)
 	{
-		if((*a)->content != sorted_list->content)
-			ft_rotate_a(a);
-		else
+		cheaps = ischeap(*a);
+		while(cheaps == 1)
 		{
-			ft_push_b(a, b);
-			ft_pop(&sorted_list);
+			ft_rotates(a, b, 'a');
+			if ((*a)->content == tmp.sorted_list->content)
+			{
+				ft_pushs(a, b, 'b');
+				ft_pop(&tmp.sorted_list);
+				cheaps++;
+			}
+		}
+		while (cheaps == 0)
+		{
+			ft_rrotates(a, b, 'a');
+			if ((*a)->content == tmp.sorted_list->content)
+			{
+				ft_pushs(a, b, 'b');
+				ft_pop(&tmp.sorted_list);
+				cheaps++;
+			}
 		}
 	}
+	ft_sort_three(a);
 	while (*b)
-		ft_push_a(a, b);
-	print_list(*a);
+		ft_pushs(a, b, 'a');
+	// print_list(*a);
 }

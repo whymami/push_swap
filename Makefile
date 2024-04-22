@@ -4,7 +4,14 @@ PRINTF_PATH = lib/ft_printf
 LIBFT = $(LIBFT_PATH)/libft.a
 PRINTF = $(PRINTF_PATH)/libftprintf.a
 
-SRC = main.c utils.c operations.c operations1.c operations2.c ft_control.c ft_sort.c bubble_sort.c
+SRC = \
+	main.c utils.c \
+	ft_control.c ft_sort.c \
+	bubble_sort.c \
+	operations/action_push.c \
+	operations/action_rotate.c \
+	operations/action_rrotate.c \
+	operations/action_swap.c
 OBJ = $(SRC:.c=.o)
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -g

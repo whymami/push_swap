@@ -1,31 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operations1.c                                      :+:      :+:    :+:   */
+/*   action_rotate.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: muguveli <muguveli@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/17 13:48:30 by muguveli          #+#    #+#             */
-/*   Updated: 2024/04/19 14:19:26 by muguveli         ###   ########.fr       */
+/*   Created: 2024/04/20 14:21:43 by muguveli          #+#    #+#             */
+/*   Updated: 2024/04/21 15:42:29 by muguveli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-void	ft_push_b(t_list **a, t_list **b)
-{
-	t_list	*tmp;
-
-	if (!*a)
-		return ;
-	tmp = *a;
-	*a = (*a)->next;
-	tmp->next = *b;
-	*b = tmp;
-	ft_printf("pb\n");
-}
-
-void	ft_rotate_a(t_list **a)
+static void	ft_rotate_a(t_list **a)
 {
 	t_list	*tmp;
 	t_list	*tmp2;
@@ -39,10 +26,9 @@ void	ft_rotate_a(t_list **a)
 		tmp2 = tmp2->next;
 	tmp2->next = tmp;
 	tmp->next = NULL;
-	ft_printf("ra\n");
 }
 
-void	ft_rotate_b(t_list **b)
+static void	ft_rotate_b(t_list **b)
 {
 	t_list	*tmp;
 	t_list	*tmp2;
@@ -56,5 +42,20 @@ void	ft_rotate_b(t_list **b)
 		tmp2 = tmp2->next;
 	tmp2->next = tmp;
 	tmp->next = NULL;
-	ft_printf("rb\n");
+}
+
+void	ft_run_rr(t_list **a, t_list **b)
+{
+	ft_rotate_a(a);
+	ft_rotate_b(b);
+}
+
+void	ft_rotates(t_list **a, t_list **b, char id)
+{
+	if (id == 'a' && ft_printf("ra\n"))
+		ft_rotate_a(a);
+	else if (id == 'b' && ft_printf("rb\n"))
+		ft_rotate_b(b);
+	else if (id == 'r' && ft_printf("rr\n"))
+		ft_run_rr(a, b);
 }
