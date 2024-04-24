@@ -6,10 +6,11 @@
 /*   By: muguveli <muguveli@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 19:30:40 by muguveli          #+#    #+#             */
-/*   Updated: 2024/04/15 19:45:58 by muguveli         ###   ########.fr       */
+/*   Updated: 2024/04/24 17:55:33 by muguveli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 long	ft_atoi(const char *str)
 {
 	int		i;
@@ -34,5 +35,7 @@ long	ft_atoi(const char *str)
 		tmp = (tmp * 10) + (str[i] - 48);
 		i++;
 	}
+	if (sign * tmp > 2147483647 || sign * tmp < -2147483648)
+		exit(1);
 	return (tmp * sign);
 }

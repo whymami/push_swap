@@ -1,30 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: muguveli <muguveli@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/15 12:59:08 by muguveli          #+#    #+#             */
-/*   Updated: 2024/04/24 16:54:59 by muguveli         ###   ########.fr       */
+/*   Created: 2023/12/07 14:43:47 by muguveli          #+#    #+#             */
+/*   Updated: 2023/12/19 17:03:31 by muguveli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(int content)
+void	*ft_calloc(size_t num_elements, size_t element_size)
 {
-	static	int	inx = 0;
-	t_list	*p;
+	size_t	total_size;
+	void	*memory;
+	char	*ptr;
+	size_t	i;
 
-	p = malloc(sizeof(t_list));
-	if (!p)
+	total_size = num_elements * element_size;
+	memory = malloc(total_size);
+	if (!memory)
 		return (0);
-	p->inx = inx++;
-	p->content = content;
-	p->next = NULL;
-	p->isrr = -1;
-	p->moves = -1;
-	p->target = NULL;
-	return (p);
+	else
+	{
+		ptr = (char *)memory;
+		i = 0;
+		while (i < total_size)
+		{
+			ptr[i] = 0;
+			i++;
+		}
+	}
+	return (memory);
 }

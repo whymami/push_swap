@@ -10,7 +10,11 @@ SRC = \
 	ft_atoi.c \
 	ft_isdigit.c \
 	ft_strlen.c \
-	ft_swap.c
+	ft_swap.c \
+	ft_strjoin.c \
+	ft_split.c \
+	ft_calloc.c \
+	ft_strlcpy.c \
 
 OBJ = $(SRC:.c=.o)
 CC = gcc

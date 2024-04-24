@@ -7,7 +7,6 @@ PRINTF = $(PRINTF_PATH)/libftprintf.a
 SRC = \
 	main.c utils.c \
 	ft_control.c ft_sort.c \
-	bubble_sort.c \
 	operations/action_push.c \
 	operations/action_rotate.c \
 	operations/action_rrotate.c \

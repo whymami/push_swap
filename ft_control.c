@@ -6,7 +6,7 @@
 /*   By: muguveli <muguveli@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 14:02:28 by muguveli          #+#    #+#             */
-/*   Updated: 2024/04/17 14:03:57 by muguveli         ###   ########.fr       */
+/*   Updated: 2024/04/24 17:31:53 by muguveli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void ft_argv_control(char **argv)
 			exit(1);
 		while (argv[i][++j])
 		{
-			if ((argv[i][j] == '-' || argv[i][j] == '+') && ft_isdigit(argv[i][j + 1]))
+			if ((argv[i][j] == '-' || argv[i][j] == '+' || argv[i][j] == ' ') && ft_isdigit(argv[i][j + 1]))
 				j++;
 			if((!ft_isdigit(argv[i][j])) && ft_printf("rakam değil\n"))
 				exit(1);
@@ -68,8 +68,6 @@ int ft_issort(t_list *a)
 {
 	t_list *tmp;
 
-	if (!a)
-		return (1);
 	tmp = a;
 	while (tmp->next)
 	{

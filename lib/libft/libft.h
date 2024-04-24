@@ -6,7 +6,7 @@
 /*   By: muguveli <muguveli@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 12:51:48 by muguveli          #+#    #+#             */
-/*   Updated: 2024/04/22 14:50:42 by muguveli         ###   ########.fr       */
+/*   Updated: 2024/04/24 17:53:11 by muguveli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,11 @@
 typedef struct s_list
 {
 	int			inx;
+	int			moves;
 	int			content;
+	int			isrr;
 	struct s_list	*next;
+	struct s_list	*target;
 }					t_list;
 
 t_list				*ft_lstnew(int content);
@@ -33,5 +36,9 @@ long				ft_atoi(const char *str);
 int					ft_isdigit(char c);
 int					ft_strlen(char *str);
 void				ft_swap(int	*a, int	*b);
+char				*ft_strjoin(char *s1, char *s2);
+char				**ft_split(char const *s, char c);
+void				*ft_calloc(size_t num_elements, size_t element_size);
+size_t				ft_strlcpy(char *dest, const char *src, size_t size);
 
 #endif

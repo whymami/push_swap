@@ -1,30 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: muguveli <muguveli@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/15 12:59:08 by muguveli          #+#    #+#             */
-/*   Updated: 2024/04/24 16:54:59 by muguveli         ###   ########.fr       */
+/*   Created: 2023/12/10 11:10:24 by muguveli          #+#    #+#             */
+/*   Updated: 2024/04/24 17:53:02 by muguveli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(int content)
+char	*ft_strjoin(char *s1, char *s2)
 {
-	static	int	inx = 0;
-	t_list	*p;
+	char			*res;
+	size_t			i;
+	size_t			j;
 
-	p = malloc(sizeof(t_list));
-	if (!p)
-		return (0);
-	p->inx = inx++;
-	p->content = content;
-	p->next = NULL;
-	p->isrr = -1;
-	p->moves = -1;
-	p->target = NULL;
-	return (p);
+	if (!s1)
+	{
+		s1 = malloc(sizeof(char) * 1);
+		s1[0] = '\0';
+	}
+	res = malloc(ft_strlen(s1) + ft_strlen(s2) + 2);
+	if (!res)
+		return (NULL);
+	j = 0;
+	i = 0;
+	if (s1)
+		while (s1[i])
+			res[j++] = s1[i++];
+	i = 0;
+	while (s2[i])
+		res[j++] = s2[i++];
+	res[j] = ' ';
+	res[j + 1] = '\0';
+	free(s1);
+	return (res);
 }
