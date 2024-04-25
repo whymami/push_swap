@@ -6,7 +6,7 @@
 /*   By: muguveli <muguveli@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 14:18:55 by muguveli          #+#    #+#             */
-/*   Updated: 2024/04/21 15:31:39 by muguveli         ###   ########.fr       */
+/*   Updated: 2024/04/25 17:32:54 by muguveli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ static void	ft_run_ss(t_list **a, t_list **b)
 	ft_swap_b(b);
 }
 
-void ft_swaps(t_list **a, t_list **b, char id)
+void	ft_swaps(t_list **a, t_list **b, char id)
 {
 	if (id == 'a' && ft_printf("sa\n"))
 		ft_swap_a(a);

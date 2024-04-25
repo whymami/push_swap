@@ -1,23 +1,21 @@
-#include "stdlib.h"
 #include "push_swap.h"
+#include "stdlib.h"
 
-void only_space(char *str)
+void	only_space(char *str)
 {
-	int i;
+	int	i;
 
 	i = -1;
 	while (str[++i])
 		if (ft_isdigit(str[i]) || str[i] == '+' || str[i] == '-')
 			return ;
-	exit(1);
-	return ;
+	print_error(NULL, NULL);
 }
 
-void int_check(char **argv, int argc)
+void	int_check(char **argv)
 {
-	int i;
-	if (argc < 2)
-		return ;
+	int	i;
+
 	i = 0;
 	while (argv[++i])
 	{
@@ -25,26 +23,26 @@ void int_check(char **argv, int argc)
 		only_space(argv[i]);
 	}
 }
-void arg_check(char **argv, int argc)
+void	arg_check(char **argv, int argc)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 1;
 	while (i < argc)
 	{
 		j = 0;
-		if(argv[i][j] == '\0')
-			exit(1);
+		if (argv[i][j] == '\0')
+			print_error(NULL, NULL);
 		while (argv[i][j])
 		{
 			if ((argv[i][j] < '0' || argv[i][j] > '9') && argv[i][j] != ' '
 				&& argv[i][j] != '-' && argv[i][j] != '+')
-				exit(1);
+				print_error(NULL, NULL);
 			if (argv[i][j] == '-' || argv[i][j] == '+')
-				if ((argv[i][j + 1] < '0' || argv[i][j + 1] > '9') ||
-					(argv[i][j - 1] >= '0' && argv[i][j - 1]))
-					exit(1);
+				if ((argv[i][j + 1] < '0' || argv[i][j + 1] > '9') || (argv[i][j
+						- 1] >= '0' && argv[i][j - 1]))
+					print_error(NULL, NULL);
 			j++;
 		}
 		i++;
@@ -57,45 +55,42 @@ char	**arg_join(char **argv)
 	char	**listed_all;
 	char	*tmp;
 
-	i = 1;
+	i = 0;
 	tmp = NULL;
-	while (argv[i])
-	{
+	while (argv[++i])
 		tmp = ft_strjoin(tmp, argv[i]);
-		i++;
-	}
 	listed_all = ft_split(tmp, ' ');
 	free(tmp);
 	return (listed_all);
 }
 
-void print_list(t_list *a)
+void ft_add_stack(char **argv, t_list **a)
 {
-	t_list *tmp;
+	int	i;
 
-	tmp = a;
-	while (tmp)
-	{
-		ft_printf("content: %d\t index: %d\t target->index: %d\t target->content: %d\n", tmp->content, tmp->inx, tmp->target->inx, tmp->target->content);
-		tmp = tmp->next;
-	}
+	i = -1;
+	while (argv[++i])
+		ft_lstadd_back(a, ft_lstnew(ft_atoi(argv[i])));
 }
 
 int	main(int argc, char **argv)
 {
 	if (argc < 2)
 		return (0);
-	t_list	**a;
-	t_list	**b;
-	char	**arg_list;
+	t_list **a;
+	t_list **b;
+	char **arg_list;
 
-	int_check(argv, argc);
+	int_check(argv);
 	arg_check(argv, argc);
 	a = malloc(sizeof(t_list *));
 	b = malloc(sizeof(t_list *));
 	arg_list = arg_join(argv);
 	ft_add_stack(arg_list, a);
+	dispose_split_list(arg_list);
+	ft_control(a);
 	ft_sort(a, b, ft_lstsize(*a));
-	free(*a);
-	free(*b);
+	ft_lstclear(a, b);
+	free(a);
+	free(b);
 }

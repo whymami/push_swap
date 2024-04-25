@@ -6,23 +6,28 @@
 /*   By: muguveli <muguveli@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 12:56:33 by muguveli          #+#    #+#             */
-/*   Updated: 2024/04/16 12:30:41 by muguveli         ###   ########.fr       */
+/*   Updated: 2024/04/25 19:10:18 by muguveli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstclear(t_list **lst)
+void	ft_lstclear(t_list **a, t_list **b)
 {
-	t_list	*temp;
+	t_list	*tmp;
 
-	if (lst == 0 || *lst == 0)
-		return ;
-	while (*lst)
+	while (*a)
 	{
-		temp = (*lst)->next;
-		free(*lst);
-		*lst = temp;
+		tmp = (*a)->next;
+		free(*a);
+		*a = tmp;
 	}
-	*lst = 0;
+	while (*b)
+	{
+		tmp = (*b)->next;
+		free(*b);
+		*b = tmp;
+	}
+	free(*a);
+	free(*b);
 }

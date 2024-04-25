@@ -6,11 +6,12 @@ PRINTF = $(PRINTF_PATH)/libftprintf.a
 
 SRC = \
 	main.c utils.c \
-	ft_control.c ft_sort.c \
+	ft_sort.c \
 	operations/action_push.c \
 	operations/action_rotate.c \
 	operations/action_rrotate.c \
-	operations/action_swap.c
+	operations/action_swap.c \
+	big_sort.c utils1.c utils2.c ft_control.c
 OBJ = $(SRC:.c=.o)
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -g
