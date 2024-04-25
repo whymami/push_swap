@@ -6,7 +6,7 @@
 /*   By: muguveli <muguveli@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 14:19:53 by muguveli          #+#    #+#             */
-/*   Updated: 2024/04/21 15:42:25 by muguveli         ###   ########.fr       */
+/*   Updated: 2024/04/25 16:33:10 by muguveli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,25 +15,39 @@
 static void	ft_push_a(t_list **a, t_list **b)
 {
 	t_list	*tmp;
+	t_list	*tmp2;
 
-	if (!*b)
+	if ((*b) == NULL)
 		return ;
-	tmp = *b;
-	*b = (*b)->next;
-	tmp->next = *a;
-	*a = tmp;
+	tmp2 = (*b);
+	tmp = (*b)->next;
+	tmp2->next = (*a);
+	(*a) = tmp2;
+	(*b) = tmp;
+	reindex((*a));
+	reindex((*b));
+	setrr(a);
+	setrr(b);
+	setmoves(a, b);
 }
 
 static void	ft_push_b(t_list **a, t_list **b)
 {
 	t_list	*tmp;
+	t_list	*tmp2;
 
-	if (!*a)
+	if ((*a) == NULL)
 		return ;
-	tmp = *a;
-	*a = (*a)->next;
-	tmp->next = *b;
-	*b = tmp;
+	tmp2 = (*a);
+	tmp = (*a)->next;
+	tmp2->next = (*b);
+	(*b) = tmp2;
+	(*a) = tmp;
+	reindex((*a));
+	reindex((*b));
+	setrr(a);
+	setrr(b);
+	setmoves(a, b);
 }
 
 void	ft_pushs(t_list **a, t_list **b, char id)
@@ -42,4 +56,9 @@ void	ft_pushs(t_list **a, t_list **b, char id)
 		ft_push_a(a, b);
 	else if (id == 'b' && ft_printf("pb\n"))
 		ft_push_b(a, b);
+	else if (id == 's' && ft_printf("ss\n"))
+	{
+		ft_push_a(a, b);
+		ft_push_b(a, b);
+	}
 }

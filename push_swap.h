@@ -6,7 +6,7 @@
 /*   By: muguveli <muguveli@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 15:00:26 by muguveli          #+#    #+#             */
-/*   Updated: 2024/04/22 15:14:25 by muguveli         ###   ########.fr       */
+/*   Updated: 2024/04/25 16:48:15 by muguveli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,30 @@ int ft_issort(t_list *a);
 void	ft_sort_three(t_list **a);
 
 void bubble_sort(t_list **a, t_list **b);
+
+void big_sort(t_list **a, t_list **b);
+void laststep(t_list **a, t_list **b);
+void rotate3(t_list **a, t_list **b, t_list *tmp);
+void rotate2(t_list **a, t_list **b, t_list *tmp);
+void	ft_sort_three(t_list **a);
+
+void setrr(t_list **stack);
+
+void setmoves(t_list **a, t_list **b);
+
+int	get_smallest(t_list **b);
+
+int	get_large(t_list **b);
+
+t_list *listindex(int index, t_list **stack);
+
+void gettarget(t_list **a, t_list **b);
+
+t_list *get_min_moves(t_list **a);
+
+void rotate1(t_list **a, t_list **b, t_list *tmp);
+void	reindex(t_list *stack);
+void print_list(t_list *a);
+
 
 #endif

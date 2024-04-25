@@ -6,7 +6,7 @@
 /*   By: muguveli <muguveli@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 14:21:43 by muguveli          #+#    #+#             */
-/*   Updated: 2024/04/21 15:42:29 by muguveli         ###   ########.fr       */
+/*   Updated: 2024/04/25 16:38:03 by muguveli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,33 +15,21 @@
 static void	ft_rotate_a(t_list **a)
 {
 	t_list	*tmp;
-	t_list	*tmp2;
 
-	if (!*a || !(*a)->next)
-		return ;
-	tmp = *a;
-	*a = (*a)->next;
-	tmp2 = *a;
-	while (tmp2->next)
-		tmp2 = tmp2->next;
-	tmp2->next = tmp;
-	tmp->next = NULL;
+	tmp = (*a)->next;
+	ft_lstlast((*a))->next = (*a);
+	(*a)->next = NULL;
+	(*a) = tmp;
 }
 
 static void	ft_rotate_b(t_list **b)
 {
 	t_list	*tmp;
-	t_list	*tmp2;
 
-	if (!*b || !(*b)->next)
-		return ;
-	tmp = *b;
-	*b = (*b)->next;
-	tmp2 = *b;
-	while (tmp2->next)
-		tmp2 = tmp2->next;
-	tmp2->next = tmp;
-	tmp->next = NULL;
+	tmp = (*b)->next;
+	ft_lstlast((*b))->next = (*b);
+	(*b)->next = NULL;
+	(*b) = tmp;
 }
 
 void	ft_run_rr(t_list **a, t_list **b)

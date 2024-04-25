@@ -6,7 +6,7 @@
 /*   By: muguveli <muguveli@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 13:54:40 by muguveli          #+#    #+#             */
-/*   Updated: 2024/04/24 20:51:04 by muguveli         ###   ########.fr       */
+/*   Updated: 2024/04/25 16:53:47 by muguveli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,14 +97,7 @@ void setrr(t_list **stack)
 		tmp = tmp->next;
 	}		
 }
-void print_list(t_list *stack)
-{
-	t_list	*tmp;
 
-	tmp = stack;
-	while (tmp)
-		tmp = tmp->next;
-}
 void setmoves(t_list **a, t_list **b)
 {
 	t_list	*tmp1;
@@ -115,23 +108,23 @@ void setmoves(t_list **a, t_list **b)
 	while (tmp1)
 	{
 		if (tmp1->isrr == 0)
-			tmp1->moves = tmp1->inx;
+			tmp1->moves = tmp1->inx; // saat yönde dönüyorsa index sayıyı adım sayıyı olur
 		else
-			tmp1->moves = ft_lstlast(*a)->inx - tmp1->inx + 1;
-		tmp1 = tmp1->next;
+			tmp1->moves = ft_lstlast(*a)->inx - tmp1->inx + 1; // ters yönünde dönüyorsa indexi son elemana getir ve en başa çıkarmak için 1 adım daha ekle
+		tmp1 = tmp1->next; //listeyi iletlet
 	}
-	if (tmp2)
+	if (tmp2) // eğer b listesi boş değilse
 	{
 		while (tmp2)
 		{
-			if (tmp2->isrr == 0)
-				tmp2->moves = tmp2->inx;
+			if (tmp2->isrr == 0) // saat yönünde dönüyorsa
+				tmp2->moves = tmp2->inx; // index sayıyı adım sayıyı olur
 			else
-				tmp2->moves = ft_lstlast(*b)->inx - tmp2->inx + 1;
-			tmp2 = tmp2->next;
+				tmp2->moves = ft_lstlast(*b)->inx - tmp2->inx + 1; // ters yönünde dönüyorsa indexi son elemana getir ve en başa çıkarmak için 1 adım daha ekle
+			tmp2 = tmp2->next; // listeyi ilerlet
 		}
-	
 	}
+
 }
 
 // listeyi baştan sonra tarar ve en küçük elemanın indexini döner
@@ -277,7 +270,7 @@ void rotate2(t_list **a, t_list **b, t_list *tmp)
 {
 	while (tmp->moves && tmp->target->moves)
 	{
-		ft_rotates(a, b, 'a');
+		ft_rotates(a, b, 'r');
 		tmp->moves--;
 		tmp->target->moves--;
 	}
@@ -338,13 +331,13 @@ void big_sort(t_list **a, t_list **b)
 		gettarget(a, b); 
 		tmp = get_min_moves(a);
 		if (tmp->isrr != tmp->target->isrr)
-			rotate1(a, b, tmp);
+			rotate1(a, b, tmp); // single rotate
 		else if (tmp->isrr == tmp->target->isrr)
 		{
 			if (tmp->isrr == 0)
-				rotate2(a, b, tmp);
+				rotate2(a, b, tmp); //rotate
 			else
-				rotate3(a, b, tmp);
+				rotate3(a, b, tmp); //rev rotate
 		}
 		ft_pushs(a, b, 'b');
 	}
@@ -367,5 +360,5 @@ void	ft_sort(t_list **a, t_list **b, int size)
 		setmoves(a,b); // elemanların ilk indexe kaç adımda ulaşacaklarını hesaplar ve keyderer
 		big_sort(a, b); // sıralama işlemini başlatır
 	}
-	print_list(*a);
+	// print_list(*a);
 }

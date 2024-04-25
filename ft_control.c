@@ -6,7 +6,7 @@
 /*   By: muguveli <muguveli@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 14:02:28 by muguveli          #+#    #+#             */
-/*   Updated: 2024/04/24 17:31:53 by muguveli         ###   ########.fr       */
+/*   Updated: 2024/04/25 13:25:48 by muguveli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void ft_add_stack(char **argv, t_list **a)
 {
 	int	i;
 
-	i = 0;
+	i = -1;
 	while (argv[++i])
 	{
 		if (ft_isint(ft_atoi(argv[i])))

@@ -69,6 +69,18 @@ char	**arg_join(char **argv)
 	return (listed_all);
 }
 
+void print_list(t_list *a)
+{
+	t_list *tmp;
+
+	tmp = a;
+	while (tmp)
+	{
+		ft_printf("content: %d\t index: %d\t target->index: %d\t target->content: %d\n", tmp->content, tmp->inx, tmp->target->inx, tmp->target->content);
+		tmp = tmp->next;
+	}
+}
+
 int	main(int argc, char **argv)
 {
 	if (argc < 2)
