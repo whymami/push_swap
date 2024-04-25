@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: muguveli <muguveli@student.42istanbul.c    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/25 20:01:55 by muguveli          #+#    #+#             */
+/*   Updated: 2024/04/25 20:05:09 by muguveli         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 #include "stdlib.h"
 
@@ -23,6 +35,7 @@ void	int_check(char **argv)
 		only_space(argv[i]);
 	}
 }
+
 void	arg_check(char **argv, int argc)
 {
 	int	i;
@@ -64,23 +77,14 @@ char	**arg_join(char **argv)
 	return (listed_all);
 }
 
-void ft_add_stack(char **argv, t_list **a)
-{
-	int	i;
-
-	i = -1;
-	while (argv[++i])
-		ft_lstadd_back(a, ft_lstnew(ft_atoi(argv[i])));
-}
-
 int	main(int argc, char **argv)
 {
+	t_list	**a;
+	t_list	**b;
+	char	**arg_list;
+
 	if (argc < 2)
 		return (0);
-	t_list **a;
-	t_list **b;
-	char **arg_list;
-
 	int_check(argv);
 	arg_check(argv, argc);
 	a = malloc(sizeof(t_list *));

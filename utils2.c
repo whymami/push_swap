@@ -6,7 +6,7 @@
 /*   By: muguveli <muguveli@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 17:31:26 by muguveli          #+#    #+#             */
-/*   Updated: 2024/04/25 19:53:53 by muguveli         ###   ########.fr       */
+/*   Updated: 2024/04/25 20:06:24 by muguveli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ int	get_large(t_list **b)
 
 int	get_smallest(t_list **b)
 {
-	t_list *tmp;
-	int smallest;
-	int index;
+	t_list	*tmp;
+	int		smallest;
+	int		index;
 
 	tmp = *b;
 	smallest = tmp->content;
@@ -54,7 +54,7 @@ int	get_smallest(t_list **b)
 	return (index);
 }
 
-void print_error(t_list **a, t_list **b)
+void	print_error(t_list **a, t_list **b)
 {
 	if (a != NULL && b != NULL)
 		ft_lstclear(a, b);
@@ -62,9 +62,9 @@ void print_error(t_list **a, t_list **b)
 	exit(1);
 }
 
-void dispose_split_list(char **split)
+void	dispose_split_list(char **split)
 {
-	int i;
+	int	i;
 
 	i = -1;
 	while (split[++i])

@@ -6,7 +6,7 @@
 /*   By: muguveli <muguveli@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 14:02:28 by muguveli          #+#    #+#             */
-/*   Updated: 2024/04/25 19:41:30 by muguveli         ###   ########.fr       */
+/*   Updated: 2024/04/25 20:03:36 by muguveli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,18 @@ static void	issort(t_list **stack)
 	}
 	print_error(stack, NULL);
 }
-void ft_control(t_list **a)
+
+void	ft_control(t_list **a)
 {
 	ft_isunique(*a);
 	issort(a);
+}
+
+void	ft_add_stack(char **argv, t_list **a)
+{
+	int	i;
+
+	i = -1;
+	while (argv[++i])
+		ft_lstadd_back(a, ft_lstnew(ft_atoi(argv[i])));
 }

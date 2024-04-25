@@ -6,7 +6,7 @@
 /*   By: muguveli <muguveli@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 17:08:09 by muguveli          #+#    #+#             */
-/*   Updated: 2024/04/25 19:53:22 by muguveli         ###   ########.fr       */
+/*   Updated: 2024/04/25 20:00:36 by muguveli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ static void	gettarget(t_list **a, t_list **b)
 
 void	big_sort(t_list **a, t_list **b)
 {
-	t_list *tmp;
+	t_list	*tmp;
 
 	ft_pushs(a, b, 'b');
 	ft_pushs(a, b, 'b');

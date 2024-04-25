@@ -6,11 +6,11 @@
 /*   By: muguveli <muguveli@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 14:04:32 by muguveli          #+#    #+#             */
-/*   Updated: 2024/04/17 14:04:39 by muguveli         ###   ########.fr       */
+/*   Updated: 2024/04/25 19:58:23 by muguveli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isdigit(char c)
+int	ft_isdigit(char c)
 {
 	if (c >= '0' && c <= '9')
 		return (1);

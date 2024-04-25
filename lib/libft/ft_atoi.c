@@ -6,7 +6,7 @@
 /*   By: muguveli <muguveli@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 19:30:40 by muguveli          #+#    #+#             */
-/*   Updated: 2024/04/25 18:38:15 by muguveli         ###   ########.fr       */
+/*   Updated: 2024/04/25 19:59:21 by muguveli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,16 +27,11 @@ long	ft_atoi(const char *str)
 	if ((str[i] == 43 || str[i] == 45))
 	{
 		if (str[i] == 45)
-		{
 			sign *= -1;
-		}
 		i++;
 	}
 	while (str[i] >= 48 && str[i] <= 57)
-	{
-		tmp = (tmp * 10) + (str[i] - 48);
-		i++;
-	}
+		tmp = (tmp * 10) + (str[i++] - 48);
 	if (sign * tmp > 2147483647 || sign * tmp < -2147483648)
 	{
 		write(1, "Error\n", 6);

@@ -6,7 +6,7 @@
 /*   By: muguveli <muguveli@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 12:59:08 by muguveli          #+#    #+#             */
-/*   Updated: 2024/04/24 16:54:59 by muguveli         ###   ########.fr       */
+/*   Updated: 2024/04/25 19:58:01 by muguveli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 t_list	*ft_lstnew(int content)
 {
-	static	int	inx = 0;
-	t_list	*p;
+	static int	inx;
+	t_list		*p;
 
 	p = malloc(sizeof(t_list));
 	if (!p)

@@ -6,7 +6,7 @@
 /*   By: muguveli <muguveli@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 15:00:26 by muguveli          #+#    #+#             */
-/*   Updated: 2024/04/25 19:41:43 by muguveli         ###   ########.fr       */
+/*   Updated: 2024/04/25 20:03:49 by muguveli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,4 +47,5 @@ void	print_error(t_list **a, t_list **b);
 void	dispose_split_list(char **split);
 void	dispose_list(t_list **a, t_list **b);
 void	ft_control(t_list **a);
+void	ft_add_stack(char **argv, t_list **a);
 #endif

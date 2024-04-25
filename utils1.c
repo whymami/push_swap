@@ -6,7 +6,7 @@
 /*   By: muguveli <muguveli@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 17:11:40 by muguveli          #+#    #+#             */
-/*   Updated: 2024/04/25 19:53:42 by muguveli         ###   ########.fr       */
+/*   Updated: 2024/04/25 20:06:02 by muguveli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ void	rotate3(t_list **a, t_list **b, t_list *tmp)
 
 t_list	*listindex(int index, t_list **stack)
 {
-	t_list *tmp;
+	t_list	*tmp;
 
 	tmp = *stack;
 	while (tmp)
