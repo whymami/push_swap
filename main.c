@@ -6,14 +6,14 @@
 /*   By: muguveli <muguveli@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 20:01:55 by muguveli          #+#    #+#             */
-/*   Updated: 2024/04/25 20:05:09 by muguveli         ###   ########.fr       */
+/*   Updated: 2024/04/25 20:08:52 by muguveli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "stdlib.h"
 
-void	only_space(char *str)
+static void	only_space(char *str)
 {
 	int	i;
 
@@ -24,7 +24,7 @@ void	only_space(char *str)
 	print_error(NULL, NULL);
 }
 
-void	int_check(char **argv)
+static void	int_check(char **argv)
 {
 	int	i;
 
@@ -36,7 +36,7 @@ void	int_check(char **argv)
 	}
 }
 
-void	arg_check(char **argv, int argc)
+static void	arg_check(char **argv, int argc)
 {
 	int	i;
 	int	j;
@@ -62,7 +62,7 @@ void	arg_check(char **argv, int argc)
 	}
 }
 
-char	**arg_join(char **argv)
+static char	**arg_join(char **argv)
 {
 	int		i;
 	char	**listed_all;

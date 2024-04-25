@@ -6,13 +6,13 @@
 /*   By: muguveli <muguveli@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 13:54:40 by muguveli          #+#    #+#             */
-/*   Updated: 2024/04/25 20:01:34 by muguveli         ###   ########.fr       */
+/*   Updated: 2024/04/25 20:10:38 by muguveli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_sort_three(t_list **a)
+static void	ft_sort_three(t_list **a)
 {
 	int	a1;
 	int	a2;

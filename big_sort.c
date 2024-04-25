@@ -6,13 +6,13 @@
 /*   By: muguveli <muguveli@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 17:08:09 by muguveli          #+#    #+#             */
-/*   Updated: 2024/04/25 20:00:36 by muguveli         ###   ########.fr       */
+/*   Updated: 2024/04/25 20:12:00 by muguveli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	laststep(t_list **a, t_list **b)
+static void	laststep(t_list **a, t_list **b)
 {
 	while (listindex(get_large(b), b)->moves)
 	{
