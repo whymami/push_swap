@@ -6,7 +6,7 @@
 /*   By: muguveli <muguveli@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 14:51:45 by muguveli          #+#    #+#             */
-/*   Updated: 2024/04/27 16:00:35 by muguveli         ###   ########.fr       */
+/*   Updated: 2024/04/27 18:26:10 by muguveli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,12 @@ static void	ft_isunique(t_list *a)
 	}
 }
 
-int	issort_bonus(t_list **stack)
+int	issort_bonus(t_list **stack, t_list **b)
 {
 	t_list	*tmp;
 
+	if (*b)
+		print_error_bonus(stack, b);
 	tmp = *stack;
 	while (tmp->next)
 	{

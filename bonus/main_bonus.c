@@ -6,7 +6,7 @@
 /*   By: muguveli <muguveli@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 15:00:22 by muguveli          #+#    #+#             */
-/*   Updated: 2024/04/27 16:00:27 by muguveli         ###   ########.fr       */
+/*   Updated: 2024/04/27 18:25:08 by muguveli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ int	main(int argc, char **argv)
 	ft_control_bonus(listed_all, a);
 	dispose_split_list(listed_all);
 	ft_handler(a, b);
-	if (issort_bonus(a))
+	if (issort_bonus(a, b))
 		ft_printf("OK\n");
 	else
 		ft_printf("KO\n");

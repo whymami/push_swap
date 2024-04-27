@@ -6,7 +6,7 @@
 /*   By: muguveli <muguveli@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 14:02:28 by muguveli          #+#    #+#             */
-/*   Updated: 2024/04/27 16:00:48 by muguveli         ###   ########.fr       */
+/*   Updated: 2024/04/27 18:22:20 by muguveli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static void	ft_isunique(t_list *a)
 	}
 }
 
-static void	issort(t_list **stack)
+static int	issort(t_list **stack)
 {
 	t_list	*tmp;
 
@@ -39,16 +39,17 @@ static void	issort(t_list **stack)
 	while (tmp->next)
 	{
 		if (tmp->content > tmp->next->content)
-			return ;
+			return (0);
 		tmp = tmp->next;
 	}
-	print_error(stack, NULL);
+	return (1);
 }
 
 void	ft_control(t_list **a)
 {
 	ft_isunique(*a);
-	issort(a);
+	if (issort(a))
+		exit(0);
 }
 
 void	ft_add_stack(char **argv, t_list **a)

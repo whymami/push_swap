@@ -6,7 +6,7 @@
 /*   By: muguveli <muguveli@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 15:01:47 by muguveli          #+#    #+#             */
-/*   Updated: 2024/04/27 16:00:34 by muguveli         ###   ########.fr       */
+/*   Updated: 2024/04/27 18:25:00 by muguveli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 void	ft_handler(t_list **a, t_list **b);
 void	ft_control_bonus(char **listed_all, t_list **a);
 void	print_error_bonus(t_list **a, t_list **b);
-int		issort_bonus(t_list **stack);
+int		issort_bonus(t_list **stack, t_list **b);
 
 void	ft_pushs(t_list **a, t_list **b, char id);
 void	ft_rotates(t_list **a, t_list **b, char id);
