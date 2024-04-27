@@ -15,6 +15,7 @@ SRC = \
 	ft_split.c \
 	ft_calloc.c \
 	ft_strlcpy.c \
+	ft_strncmp.c
 
 OBJ = $(SRC:.c=.o)
 CC = gcc

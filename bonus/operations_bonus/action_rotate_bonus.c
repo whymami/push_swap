@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   action_rrotate.c                                   :+:      :+:    :+:   */
+/*   action_rotate_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: muguveli <muguveli@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/20 14:23:39 by muguveli          #+#    #+#             */
-/*   Updated: 2024/04/25 20:00:02 by muguveli         ###   ########.fr       */
+/*   Created: 2024/04/27 14:42:55 by muguveli          #+#    #+#             */
+/*   Updated: 2024/04/27 15:52:13 by muguveli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../push_swap_bonus.h"
 
-void	ft_reverse_rotate_a(t_list **a)
-
+void	ra(t_list **a)
 {
 	t_list	*tmp;
 	t_list	*tmp2;
@@ -22,14 +21,14 @@ void	ft_reverse_rotate_a(t_list **a)
 		return ;
 	tmp = *a;
 	tmp2 = *a;
-	while (tmp2->next->next)
+	*a = (*a)->next;
+	while (tmp2->next)
 		tmp2 = tmp2->next;
-	*a = tmp2->next;
-	tmp2->next = NULL;
-	(*a)->next = tmp;
+	tmp2->next = tmp;
+	tmp->next = NULL;
 }
 
-void	ft_reverse_rotate_b(t_list **b)
+void	rb(t_list **b)
 {
 	t_list	*tmp;
 	t_list	*tmp2;
@@ -38,25 +37,23 @@ void	ft_reverse_rotate_b(t_list **b)
 		return ;
 	tmp = *b;
 	tmp2 = *b;
-	while (tmp2->next->next)
+	*b = (*b)->next;
+	while (tmp2->next)
 		tmp2 = tmp2->next;
-	*b = tmp2->next;
-	tmp2->next = NULL;
-	(*b)->next = tmp;
+	tmp2->next = tmp;
+	tmp->next = NULL;
 }
 
-void	ft_run_rrr(t_list **a, t_list **b)
+void	ft_rotates(t_list **a, t_list **b, char id)
 {
-	ft_reverse_rotate_a(a);
-	ft_reverse_rotate_b(b);
-}
-
-void	ft_rrotates(t_list **a, t_list **b, char id)
-{
-	if (id == 'a' && ft_printf("rra\n"))
-		ft_reverse_rotate_a(a);
-	else if (id == 'b' && ft_printf("rrb\n"))
-		ft_reverse_rotate_b(b);
-	else if (id == 'r' && ft_printf("rrr\n"))
-		ft_run_rrr(a, b);
+	if (id == 'a')
+		ra(a);
+	else if (id == 'b')
+		rb(b);
+	else
+	{
+		ra(a);
+		rb(b);
+		ft_printf("rr\n");
+	}
 }

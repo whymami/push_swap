@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   utils1_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: muguveli <muguveli@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/27 15:34:51 by muguveli          #+#    #+#             */
-/*   Updated: 2024/04/27 15:51:57 by muguveli         ###   ########.fr       */
+/*   Created: 2024/04/27 15:18:47 by muguveli          #+#    #+#             */
+/*   Updated: 2024/04/27 15:53:03 by muguveli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "push_swap_bonus.h"
 
-int	ft_putchar(char c);
-int	ft_putstr(char *c);
-int	ft_putnbr(int c);
-int	ft_uns(unsigned int a);
-int	ft_printf(const char *str, ...);
-int	ft_hex(unsigned int h, int b);
-int	ft_ptr(unsigned long h, int b);
+void	dispose_split_list(char **split)
+{
+	int	i;
 
-#endif
+	i = -1;
+	while (split[++i])
+		free(split[i]);
+	free(split);
+}

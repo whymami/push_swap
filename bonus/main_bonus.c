@@ -1,3 +1,22 @@
+<<<<<<< HEAD
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main_bonus.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: muguveli <muguveli@student.42istanbul.c    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/27 15:00:22 by muguveli          #+#    #+#             */
+/*   Updated: 2024/04/27 15:47:20 by muguveli         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "push_swap_bonus.h"
+#include "unistd.h"
+#include <stdlib.h>
+
+char	**arg_join(char **argv)
+=======
 
 #include "push_swap_bonus.h"
 #include <stdlib.h>
@@ -174,6 +193,7 @@ void ft_rrotates(t_list **a, t_list **b, char id)
 }
 
 static char	**arg_join(char **argv)
+>>>>>>> e8838f51c79da05f706a9114eb43d64eba54be67
 {
 	int		i;
 	char	**listed_all;
@@ -188,6 +208,9 @@ static char	**arg_join(char **argv)
 	return (listed_all);
 }
 
+<<<<<<< HEAD
+void	only_space(char *str)
+=======
 void	ft_add_stack(char **argv, t_list **a)
 {
 	int	i;
@@ -198,6 +221,7 @@ void	ft_add_stack(char **argv, t_list **a)
 }
 
 static void	only_space(char *str)
+>>>>>>> e8838f51c79da05f706a9114eb43d64eba54be67
 {
 	int	i;
 
@@ -205,10 +229,17 @@ static void	only_space(char *str)
 	while (str[++i])
 		if (ft_isdigit(str[i]) || str[i] == '+' || str[i] == '-')
 			return ;
+<<<<<<< HEAD
+	print_error_bonus(NULL, NULL);
+}
+
+void	int_check(char **argv)
+=======
 	print_error(NULL, NULL);
 }
 
 static void	int_check(char **argv)
+>>>>>>> e8838f51c79da05f706a9114eb43d64eba54be67
 {
 	int	i;
 
@@ -220,7 +251,11 @@ static void	int_check(char **argv)
 	}
 }
 
+<<<<<<< HEAD
+void	arg_check(char **argv, int argc)
+=======
 static void	arg_check(char **argv, int argc)
+>>>>>>> e8838f51c79da05f706a9114eb43d64eba54be67
 {
 	int	i;
 	int	j;
@@ -230,22 +265,60 @@ static void	arg_check(char **argv, int argc)
 	{
 		j = 0;
 		if (argv[i][j] == '\0')
+<<<<<<< HEAD
+			print_error_bonus(NULL, NULL);
+=======
 			print_error(NULL, NULL);
+>>>>>>> e8838f51c79da05f706a9114eb43d64eba54be67
 		while (argv[i][j])
 		{
 			if ((argv[i][j] < '0' || argv[i][j] > '9') && argv[i][j] != ' '
 				&& argv[i][j] != '-' && argv[i][j] != '+')
+<<<<<<< HEAD
+				print_error_bonus(NULL, NULL);
+			if (argv[i][j] == '-' || argv[i][j] == '+')
+				if ((argv[i][j + 1] < '0' || argv[i][j + 1] > '9') || (argv[i][j
+						- 1] >= '0' && argv[i][j - 1]))
+					print_error_bonus(NULL, NULL);
+=======
 				print_error(NULL, NULL);
 			if (argv[i][j] == '-' || argv[i][j] == '+')
 				if ((argv[i][j + 1] < '0' || argv[i][j + 1] > '9') || (argv[i][j
 						- 1] >= '0' && argv[i][j - 1]))
 					print_error(NULL, NULL);
+>>>>>>> e8838f51c79da05f706a9114eb43d64eba54be67
 			j++;
 		}
 		i++;
 	}
 }
 
+<<<<<<< HEAD
+int	main(int argc, char **argv)
+{
+	t_list	**a;
+	t_list	**b;
+	char	**listed_all;
+
+	if (argc < 2)
+		return (0);
+	int_check(argv);
+	arg_check(argv, argc);
+	a = malloc(sizeof(t_list *));
+	b = malloc(sizeof(t_list *));
+	listed_all = arg_join(argv);
+	ft_control_bonus(listed_all, a);
+	dispose_split_list(listed_all);
+	ft_handler(a, b);
+	if (issort_bonus(a))
+		ft_printf("OK\n");
+	else
+		ft_printf("KO\n");
+	ft_lstclear(a, b);
+	free(a);
+	free(b);
+}
+=======
 static void	ft_isunique(t_list *a)
 {
 	t_list	*tmp;
@@ -380,3 +453,4 @@ int    main(int argc, char **argv)
 
     
 }
+>>>>>>> e8838f51c79da05f706a9114eb43d64eba54be67

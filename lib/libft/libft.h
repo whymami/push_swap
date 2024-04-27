@@ -6,7 +6,7 @@
 /*   By: muguveli <muguveli@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 12:51:48 by muguveli          #+#    #+#             */
-/*   Updated: 2024/04/25 19:30:48 by muguveli         ###   ########.fr       */
+/*   Updated: 2024/04/27 14:49:53 by muguveli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,6 @@ char				*ft_strjoin(char *s1, char *s2);
 char				**ft_split(char const *s, char c);
 void				*ft_calloc(size_t num_elements, size_t element_size);
 size_t				ft_strlcpy(char *dest, const char *src, size_t size);
+int					ft_strncmp(const char *dest, const char *src, size_t n);
 
 #endif

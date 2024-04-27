@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: muguveli <muguveli@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/27 15:34:51 by muguveli          #+#    #+#             */
-/*   Updated: 2024/04/27 15:51:57 by muguveli         ###   ########.fr       */
+/*   Created: 2024/04/27 14:49:12 by muguveli          #+#    #+#             */
+/*   Updated: 2024/04/27 14:49:37 by muguveli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "libft.h"
 
-int	ft_putchar(char c);
-int	ft_putstr(char *c);
-int	ft_putnbr(int c);
-int	ft_uns(unsigned int a);
-int	ft_printf(const char *str, ...);
-int	ft_hex(unsigned int h, int b);
-int	ft_ptr(unsigned long h, int b);
+int	ft_strncmp(const char *dest, const char *src, size_t n)
+{
+	size_t	i;
 
-#endif
+	i = 0;
+	if (!n)
+		return (0);
+	while (dest[i] && src[i] && dest[i] == src[i] && i < n - 1)
+		i++;
+	return ((unsigned char)dest[i] - (unsigned char)src[i]);
+}
