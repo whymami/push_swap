@@ -1,16 +1,11 @@
 NAME = push_swap
-<<<<<<< HEAD
-BONUS_NAME = chacker
-=======
 BONUS_NAME = checker
->>>>>>> e8838f51c79da05f706a9114eb43d64eba54be67
 LIBFT_PATH = lib/libft
 PRINTF_PATH = lib/ft_printf
 LIBFT = $(LIBFT_PATH)/libft.a
 PRINTF = $(PRINTF_PATH)/libftprintf.a
 
 SRC = \
-<<<<<<< HEAD
 	bubble_sort/main.c bubble_sort/utils.c \
 	bubble_sort/ft_sort.c \
 	bubble_sort/operations/action_push.c \
@@ -28,18 +23,6 @@ BONUS_SRC = \
 	bonus/operations_bonus/action_rotate_bonus.c\
 	bonus/operations_bonus/action_rrotate_bonus.c\
 	bonus/operations_bonus/action_swap_bonus.c\
-=======
-	main.c utils.c \
-	ft_sort.c \
-	operations/action_push.c \
-	operations/action_rotate.c \
-	operations/action_rrotate.c \
-	operations/action_swap.c \
-	big_sort.c utils1.c utils2.c ft_control.c
-
-BONUS_SRC = \
-	bonus/main_bonus.c\
->>>>>>> e8838f51c79da05f706a9114eb43d64eba54be67
 	lib/getnextline/get_next_line.c \
 	lib/getnextline/get_next_line_utils.c \
 

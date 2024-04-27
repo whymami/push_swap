@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -7,17 +6,13 @@
 /*   By: muguveli <muguveli@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 15:01:47 by muguveli          #+#    #+#             */
-/*   Updated: 2024/04/27 15:47:34 by muguveli         ###   ########.fr       */
+/*   Updated: 2024/04/27 16:00:34 by muguveli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-=======
-
->>>>>>> e8838f51c79da05f706a9114eb43d64eba54be67
 
 #ifndef PUSH_SWAP_BONUS_H
 # define PUSH_SWAP_BONUS_H
 
-<<<<<<< HEAD
 # include "../lib/ft_printf/ft_printf.h"
 # include "../lib/getnextline/get_next_line.h"
 # include "../lib/libft/libft.h"
@@ -32,11 +27,4 @@ void	ft_rotates(t_list **a, t_list **b, char id);
 void	ft_rrotates(t_list **a, t_list **b, char id);
 void	ft_swaps(t_list **a, t_list **b, char id);
 void	dispose_split_list(char **split);
-=======
-
-# include "../lib/libft/libft.h"
-# include "../lib/ft_printf/ft_printf.h"
-# include "../lib/getnextline/get_next_line.h"
-
->>>>>>> e8838f51c79da05f706a9114eb43d64eba54be67
 #endif
